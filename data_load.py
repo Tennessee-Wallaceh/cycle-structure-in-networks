@@ -101,7 +101,7 @@ def load_feature_vectors(file_names, file_labels, feature_functions, save=False)
 
     if os.path.isfile('data/features/'+save_name+'.npy'):
         print('Loaded %s.npy' % save_name)
-        return np.load('data/features/'+save_name+'.npy')[0]
+        return np.load('data/features/'+save_name+'.npy')
 
     # if file can't be found build the vectors
     return build_feature_vectors(file_names, file_labels, feature_functions, save)
