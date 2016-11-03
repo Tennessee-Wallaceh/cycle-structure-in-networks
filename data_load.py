@@ -32,8 +32,8 @@ def load_data(file_name):
 
 def build_feature_vectors(file_names, file_labels, feature_functions, save=False):
     """
-    Build feature vectors for a set of files and feaure functions. Each feature
-    function
+    Build feature vectors for a set of files and feature functions. Each feature
+    function should be applied to a single adjacency matrix from a file.
     Save to file if needed. Files will be saved in data/features/ in the
     following format:
         - 'file_name1+file_name2__feature_function1.npy'
@@ -104,4 +104,4 @@ def load_feature_vectors(file_names, file_labels, feature_functions, save=False)
         return np.load('data/features/'+save_name+'.npy')[0]
 
     # if file can't be found build the vectors
-    return build_vectors(file_names, file_labels, feature_functions, save)
+    return build_feature_vectors(file_names, file_labels, feature_functions, save)
